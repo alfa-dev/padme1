@@ -1,0 +1,5 @@
+<%= form_for @pad do |p|%>
+<%= p.hidden_field(:name, value: params[:name]) %>
+<%= p.text_area(:content) %>
+<%= p.submit %>
+<% end %>
