@@ -7,7 +7,7 @@ body, html{
   margin: 0px;
 }
 
-textarea{
+.pad_text, #mark_down{
   position: absolute;
   padding: 20px;
   top: 0px;
@@ -17,4 +17,5 @@ textarea{
   height: 100%;
   font-size: 20px;
   box-sizing: border-box;
+  background: #fff;
 }
