@@ -19,3 +19,14 @@ body, html{
   box-sizing: border-box;
   background: #fff;
 }
+
+#save {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  background-color: #99DB45;
+  border: 1px solid #73AE27;
+  color: #fff;
+  padding: 5px 10px;
+}

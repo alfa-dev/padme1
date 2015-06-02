@@ -5,7 +5,9 @@ $(document).ready(function(){
   var $submit     = $("form input[type='submit']");
   var $mark_down  = $("#mark_down");
   var $pad_text   = $(".pad_text");
+  var $save       = $("#save");
 
+  $save.hide();
   $submit.hide();
   $pad_text.focus();
 
@@ -17,7 +19,7 @@ $(document).ready(function(){
 
   $("textarea").on("keypress change",function(){
     
-    $mark_down.fadeOut(200);
+    $mark_down.hide();
     clearTimeout(delay);
 
     delay = setTimeout(function(){
@@ -34,6 +36,7 @@ $(document).ready(function(){
       method: 'post',
       success: function(data){
         // TODO
+        $save.fadeIn("fast").fadeOut(5000);
       }
     });
 
