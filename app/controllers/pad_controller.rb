@@ -15,7 +15,13 @@ class PadController < ApplicationController
     @pad = Pad.where(name: params[:pad][:name]).first_or_create
     @pad.name    = params[:pad][:name]
     @pad.content = params[:pad][:content]
-    @pad.save!
+    
+    if @pad.content.empty?
+      @pad.destroy!
+    else
+      @pad.save!
+    end
+    
     redirect_to :back
   end
 
