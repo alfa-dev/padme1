@@ -1,9 +1,13 @@
-<%= form_for @pad do |p|%>
-<%= p.hidden_field(:name, value: params[:name]) %>
-<%= p.text_area(:content, class: 'pad_text') %>
-<%= p.submit %>
-<% end %>
+<main id="pad">
+  <div id="status"></div>
 
-<div id="mark_down">
-  <%= raw Markdown.new(@pad.content).to_html unless @pad.content.nil?%>
-</div>
+  <%= form_for @pad do |p|%>
+  <%= p.hidden_field(:name, value: params[:name]) %>
+  <%= p.text_area(:content, class: 'pad_text') %>
+  <%= p.submit %>
+  <% end %>
+
+  <div id="mark_down">
+    <%= raw Markdown.new(@pad.content).to_html unless @pad.content.nil?%>
+  </div>
+</main>
