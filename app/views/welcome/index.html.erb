@@ -1,0 +1,10 @@
+<main id="root">
+  <h1>Pad Me 1</h1>
+  <%= image_tag("om_mani_padme_hum.png") %>
+
+  <%= form_for "/" do |f|%>
+    <%= f.label 'Pad', request.url.gsub!('http://', '')%>
+    <%= f.text_field 'Pad' %>
+    <%= f.submit 'Pad Me' %>
+  <% end %>
+</main>

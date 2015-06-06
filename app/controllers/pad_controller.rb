@@ -25,4 +25,7 @@ class PadController < ApplicationController
     redirect_to :back
   end
 
+  def redirect 
+    redirect_to "/#{params["/"][:Pad]}"
+  end
 end
