@@ -5,28 +5,35 @@
 body, html{
   padding: 0px;
   margin: 0px;
-}
-
-.pad_text, #mark_down{
-  position: absolute;
-  padding: 20px;
-  top: 0px;
-  left: 0px;
-  margin: 0px;
   width: 100%;
-  height: 100%;
-  font-size: 20px;
-  box-sizing: border-box;
-  background: #fff;
 }
+#pad {
+  
+  .pad_text, #mark_down{
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #fff;
+  }
 
-#save {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  z-index: 1;
-  background-color: #99DB45;
-  border: 1px solid #73AE27;
-  color: #fff;
-  padding: 5px 10px;
+  #status {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    background-color: #99DB45;
+    border: 1px solid #73AE27;
+    color: #fff;
+    padding: 5px 10px;
+
+    &.loading{
+      background-color: orange;
+    }
+  }
 }
