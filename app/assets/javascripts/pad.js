@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
   var delay;
-  var $form       = $("form");
-  var $submit     = $("form input[type='submit']");
+  var $form       = $("form.new_pad, form.edit_pad");
+  var $submit     = $(".edit_pad input[type='submit'], .new_pad input[type='submit']");
   var $mark_down  = $("#mark_down");
   var $pad_text   = $(".pad_text");
-  var $save       = $("#save");
+  var $status     = $("#status");
 
-  $save.hide();
+  $status.hide();
   $submit.hide();
   $pad_text.focus();
 
@@ -22,8 +22,17 @@ $(document).ready(function(){
     $mark_down.hide();
     clearTimeout(delay);
 
+    window.onbeforeunload = function() {
+      return "O Texto ainda não foi completamente salvo!";
+    } 
+
     delay = setTimeout(function(){
       $form.submit();
+      $status
+        .html("carregando")
+        .addClass("loading")
+        .removeClass("save")
+        .show();
     },2000); 
   });
 
@@ -36,7 +45,17 @@ $(document).ready(function(){
       method: 'post',
       success: function(data){
         // TODO
-        $save.fadeIn("fast").fadeOut(5000);
+        $status
+        .html("salvo")
+        .addClass("save")
+        .removeClass("loading")
+        .show();
+        
+        setTimeout(function(){
+          $status.fadeOut();
+        },2000);
+
+        window.onbeforeunload = undefined;
       }
     });
 
