@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'compass/css3';
-
+@import 'mixins';
 
 #root {
   font-family: 'Lobster', cursive;
@@ -11,7 +10,7 @@
   text-align: center;
   width: 100%;
   color: #323131;
-  
+
   h1{
     font-size: 40px;
     font-weight: lighter;
