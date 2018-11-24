@@ -1,4 +1,4 @@
-class CreatePads < ActiveRecord::Migration
+class CreatePads < ActiveRecord::Migration[5.0]
   def change
     create_table :pads do |t|
 
